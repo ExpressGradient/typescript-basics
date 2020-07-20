@@ -1,3 +1,6 @@
+// import modules
+import { randomNum } from "./module.js";
+
 // explicit typed variables
 const username: string = "Express Gradient";
 let age: number = 20;
@@ -70,3 +73,38 @@ const greeting: Function = (person: person): void => console.log(`Hi ${person.na
 // function signatures
 let sayHello: (name: string) => void;
 sayHello = (name: string): void => console.log(`Greetings ${name}`);
+
+// dom
+const anchor = document.querySelector("a")!;
+console.log(anchor.innerText, anchor.href);
+
+// type-casting
+const heading = document.querySelector("h1") as HTMLHeadingElement;
+heading.innerText = "Hello Discoding";
+
+// classes
+class Person {
+    public username: string;
+    readonly skillLevel: number;
+    private isSad: boolean;
+
+    constructor(username: string, skillLevel: number, isSad: boolean) {
+        this.username = username;
+        this.skillLevel = skillLevel;
+        this.isSad = isSad;
+    }
+}
+
+const discoding = new Person("discoding", 100, true);
+const gradient = new Person("Express Gradient", 50, false);
+
+const persons: Person[] = [discoding, gradient];
+
+console.log(discoding.skillLevel); // we can read the property's value but we can't write it
+// discoding.skillLevel = 1000;
+
+// console.log(discoding.isSad);
+// if we try to access isSad property on the Person objects, we get an error as the isSad property is accessible within the class.
+
+// modules
+console.log(randomNum);
