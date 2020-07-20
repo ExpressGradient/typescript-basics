@@ -39,3 +39,34 @@ console.log(user.isSad);
 let user: object = {
     name: "discoding"
 }*/
+
+// any type, not much preferable
+let anyType: any = true;
+anyType = 32;
+anyType = "Hello World";
+
+// any typed array
+let anyArray: any[] = ["World", true, 32];
+
+// functions
+// optional parameter
+const add: Function = (a: number, b: number, c?: number) => {
+    console.log(a + b);
+}
+
+// default parameter
+const multiply: Function = (a: number, b: number, c: number = 10) => {
+    console.log(a * b * c);
+}
+
+// return type
+const squared: Function = (a: number): number => a**2;
+console.log(squared(10));
+
+// type aliasing
+type person = {name: string, age: number};
+const greeting: Function = (person: person): void => console.log(`Hi ${person.name}, you are ${person.age} years old.`);
+
+// function signatures
+let sayHello: (name: string) => void;
+sayHello = (name: string): void => console.log(`Greetings ${name}`);
